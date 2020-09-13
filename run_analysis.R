@@ -77,22 +77,6 @@ names(merged_dataset) <- gsub("-freq()", "Frequency", names(merged_dataset), ign
 mean_std_dataset <- select(merged_dataset, "Volunteer #", "Activity Name", contains("Mean"), contains("STD"))
 
 ##############################################################
-### Labeling Data Set
-
-# names(mean_std_dataset) <- gsub("gravity", "Gravity", names(mean_std_dataset))
-# names(mean_std_dataset) <- gsub("Gyro", "Gyroscope", names(mean_std_dataset))
-# names(mean_std_dataset) <- gsub("BodyBody", "Body", names(mean_std_dataset))
-# names(mean_std_dataset) <- gsub("angle", "Angle", names(mean_std_dataset))
-# names(mean_std_dataset) <- gsub("Mag", "Magnitude", names(mean_std_dataset))
-# names(mean_std_dataset) <- gsub("^t", "Time", names(mean_std_dataset))
-# names(mean_std_dataset) <- gsub("-std()", "STD", names(mean_std_dataset), ignore.case = TRUE)
-# names(mean_std_dataset) <- gsub("Acc", "Accelerometer", names(mean_std_dataset))
-# names(mean_std_dataset) <- gsub("tBody", "TimeBody", names(mean_std_dataset))
-# names(mean_std_dataset) <- gsub("-mean()", "Mean", names(mean_std_dataset), ignore.case = TRUE)
-# names(mean_std_dataset) <- gsub("^f", "Frequency", names(mean_std_dataset))
-# names(mean_std_dataset) <- gsub("-freq()", "Frequency", names(mean_std_dataset), ignore.case = TRUE)
-
-##############################################################
 ### Creating second dataset
 
 temp_dataset <- 
@@ -102,3 +86,5 @@ temp_dataset <-
 final_dataset <- subset(temp_dataset, select = -c(3,4))
 names(final_dataset)[1] <- "Volunteer #"
 names(final_dataset)[2] <- "Activity Name"
+
+write.table(final_dataset, file = "final_dataset.txt", row.name=FALSE)
