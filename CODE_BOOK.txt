@@ -1,0 +1,52 @@
+==================================================================
+# CourseraProject3
+Course project for "Getting and Cleaning Data"
+==================================================================
+Dylan Denner
+9/12/2020
+==================================================================
+
+run_analysis.R uses data from the Human Activity Recognition Using Smartphones Dataset (version 1.0) to create a tidy dataset that shows the averages for each feature measurement for each volunter in the study. 
+
+For more information about the dataset, please see:http://archive.ics.uci.edu/ml/datasets/Human+Activity+Recognition+Using+Smartphones
+
+======================================
+Variables
+
+- 'features_info.txt': Shows information about the variables used on the feature vector.
+
+- 'features.txt': List of all features.
+
+- 'activity_labels.txt': Links the class labels with their activity name.
+
+- 'X_train.txt': Training set.
+
+- 'y_train.txt': Training labels.
+
+- 'X_test.txt': Test set.
+
+- 'y_test.txt': Test labels.
+
+- 'test_subject_ID_file_path': Local file path to subject_test.txt
+
+- 'test_labels_file_path': Local file path to y_test.txt
+
+- 'test_data_file_path': Local file path to X_test.txt
+
+- 'train_subject_ID_file_path': Local file path to subject_train.txt
+
+- 'train_labels_file_path': Local file path to y_train.txt
+
+- 'train_data_file_path': Local file path to X_train.txt
+
+- 'features_file_path': Local file path to features.txt
+
+======================================
+Calculations
+
+The test and training data files were combined into one data table using rbind. 
+
+The mean and standard deveations were selected from the features calculations. Information about the features calculations can be found here: http://archive.ics.uci.edu/ml/datasets/Human+Activity+Recognition+Using+Smartphones
+
+The final dataset is computed using the R "mean" function through summarise_all, then group_by the test subjects and their respective activity. 
+
